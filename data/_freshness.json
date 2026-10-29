@@ -2,8 +2,8 @@
   "controls": {
     "source": "GRC platform (assessments API)",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 93,
     "status": "ok",
     "error": ""
@@ -11,8 +11,8 @@
   "evidence": {
     "source": "Evidence store (Graph) + GitHub Releases",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 120,
     "status": "ok",
     "error": ""
@@ -20,8 +20,8 @@
   "findings": {
     "source": "GitHub Project (nonconformity board)",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 14,
     "status": "ok",
     "error": ""
@@ -29,8 +29,8 @@
   "risks": {
     "source": "GitHub Issues (Risk Register label)",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 10,
     "status": "ok",
     "error": ""
@@ -38,8 +38,8 @@
   "policies": {
     "source": "Policy repo (git history via gh)",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 16,
     "status": "ok",
     "error": ""
@@ -47,8 +47,8 @@
   "training": {
     "source": "HRIS roster + LMS completions",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 3,
     "status": "ok",
     "error": ""
@@ -56,8 +56,8 @@
   "changes": {
     "source": "GitHub issue timelines (gh api)",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 40,
     "status": "ok",
     "error": ""
@@ -65,18 +65,18 @@
   "access_reviews": {
     "source": "Identity provider + review campaigns",
     "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
+    "last_attempt": "2026-10-29T18:16:21+00:00",
+    "last_success": "2026-10-29T18:16:21+00:00",
     "rows": 8,
     "status": "ok",
     "error": ""
   },
   "repo_security": {
     "source": "GitHub REST API (gh api)",
-    "mode": "sample",
-    "last_attempt": "2026-10-29T18:14:55+00:00",
-    "last_success": "2026-10-29T18:14:55+00:00",
-    "rows": 18,
+    "mode": "live",
+    "last_attempt": "2026-10-29T18:16:23+00:00",
+    "last_success": "2026-10-29T18:16:23+00:00",
+    "rows": 1,
     "status": "ok",
     "error": ""
   }
