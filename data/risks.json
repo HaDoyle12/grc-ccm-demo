@@ -1,0 +1,88 @@
+{
+  "dataset": "risks",
+  "source": "GitHub Issues (Risk Register label)",
+  "mode": "sample",
+  "as_of": "2026-10-26",
+  "rows": [
+    {
+      "id": "R-001",
+      "title": "Single region for customer database",
+      "severity": "Critical",
+      "treatment": "Transfer",
+      "owner_team": "SRE",
+      "last_worked": "2026-09-11"
+    },
+    {
+      "id": "R-002",
+      "title": "Shared admin accounts in legacy CRM",
+      "severity": "High",
+      "treatment": "Transfer",
+      "owner_team": "SRE",
+      "last_worked": "2026-08-31"
+    },
+    {
+      "id": "R-003",
+      "title": "Unsupported OS on build agents",
+      "severity": "Critical",
+      "treatment": "Transfer",
+      "owner_team": "IAM Eng",
+      "last_worked": "2026-09-12"
+    },
+    {
+      "id": "R-004",
+      "title": "Third-party SDK with unknown data flows",
+      "severity": "High",
+      "treatment": "Mitigate",
+      "owner_team": "Procurement",
+      "last_worked": "2026-08-12"
+    },
+    {
+      "id": "R-005",
+      "title": "Key-person dependency in payments team",
+      "severity": "Critical",
+      "treatment": "Mitigate",
+      "owner_team": "AI Governance",
+      "last_worked": "2026-08-06"
+    },
+    {
+      "id": "R-006",
+      "title": "Shadow SaaS adoption",
+      "severity": "Critical",
+      "treatment": "Transfer",
+      "owner_team": "SRE",
+      "last_worked": "2026-10-11"
+    },
+    {
+      "id": "R-007",
+      "title": "Insufficient DDoS capacity at edge",
+      "severity": "Critical",
+      "treatment": "Mitigate",
+      "owner_team": "IAM Eng",
+      "last_worked": "2026-08-31"
+    },
+    {
+      "id": "R-008",
+      "title": "AI model outputs not reviewed before release",
+      "severity": "Moderate",
+      "treatment": "Accept",
+      "owner_team": "Procurement",
+      "last_worked": "2026-10-04"
+    },
+    {
+      "id": "R-009",
+      "title": "Long-lived cloud access keys",
+      "severity": "Moderate",
+      "treatment": "Mitigate",
+      "owner_team": "IAM Eng",
+      "last_worked": "2026-09-01"
+    },
+    {
+      "id": "R-010",
+      "title": "Manual offboarding for contractors",
+      "severity": "Low",
+      "treatment": "Accept",
+      "owner_team": "AI Governance",
+      "last_worked": "2026-09-17"
+    }
+  ]
+}

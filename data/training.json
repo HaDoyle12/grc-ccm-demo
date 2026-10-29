@@ -1,0 +1,32 @@
+{
+  "dataset": "training",
+  "source": "HRIS roster + LMS completions",
+  "mode": "sample",
+  "as_of": "2026-10-26",
+  "rows": [
+    {
+      "cohort": "Employees",
+      "population": 1240,
+      "completed": 1115,
+      "overdue": 73,
+      "no_record": 52,
+      "pct": 89.9
+    },
+    {
+      "cohort": "Contractors",
+      "population": 310,
+      "completed": 263,
+      "overdue": 30,
+      "no_record": 17,
+      "pct": 84.8
+    },
+    {
+      "cohort": "New hires (30-day window)",
+      "population": 64,
+      "completed": 52,
+      "overdue": 5,
+      "no_record": 7,
+      "pct": 81.2
+    }
+  ]
+}

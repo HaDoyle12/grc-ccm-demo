@@ -1,0 +1,82 @@
+name: Weekly Dashboard Refresh
+
+# Order matters (same as the production register):
+#   1) archive LAST week's published dashboard as a Release -> audit trail of what management saw
+#   2) refresh data live, 3) freshness gate, 4) commit data (diffable), 5) deploy Pages
+#   6) on any failure, comment on ONE open tracking issue so a red run reaches a person
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # Mondays 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: weekly-dashboard
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: 1) Snapshot last week's dashboard BEFORE refreshing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          day=$(date -u +%F)
+          tag="dashboard-snapshot-$day"
+          if curl -sfL "$PAGES_URL" -o snapshot.html && ! gh release view "$tag" >/dev/null 2>&1; then
+            sha=$(sha256sum snapshot.html | cut -d' ' -f1)
+            gh release create "$tag" snapshot.html --title "Dashboard snapshot $day" \
+              --notes "Dashboard as published before the $day refresh. SHA-256: $sha. Run: $RUN_URL"
+          else
+            echo "No published dashboard yet, or snapshot already taken today"
+          fi
+
+      - name: 2) Refresh (collectors -> register -> dashboard)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CCM_REPOS: ${{ github.repository }}
+        run: python3 refresh.py --live
+
+      - name: 3) Freshness gate
+        run: python3 check_freshness.py --max-age-days 8
+
+      - name: 4) Commit refreshed data (week-over-week diff = change log)
+        run: |
+          git config user.name "ccm-weekly-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data exports site
+          git diff --cached --quiet || git commit -m "Weekly refresh $(date -u +%F)"
+          git push
+
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+      - name: 5) Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+      # Uses GITHUB_TOKEN on purpose: the alert path must not depend on a
+      # collector credential whose failure it may be reporting.
+      - name: 6) Report a failed run (one tracking issue, not one per week)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python3 report_failure.py --title "Weekly Dashboard Refresh is failing" --run-url "$RUN_URL"

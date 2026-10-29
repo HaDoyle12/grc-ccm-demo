@@ -1,0 +1,11 @@
+id,title,severity,treatment,owner_team,last_worked
+R-001,Single region for customer database,Critical,Transfer,SRE,2026-09-11
+R-002,Shared admin accounts in legacy CRM,High,Transfer,SRE,2026-08-31
+R-003,Unsupported OS on build agents,Critical,Transfer,IAM Eng,2026-09-12
+R-004,Third-party SDK with unknown data flows,High,Mitigate,Procurement,2026-08-12
+R-005,Key-person dependency in payments team,Critical,Mitigate,AI Governance,2026-08-06
+R-006,Shadow SaaS adoption,Critical,Transfer,SRE,2026-10-11
+R-007,Insufficient DDoS capacity at edge,Critical,Mitigate,IAM Eng,2026-08-31
+R-008,AI model outputs not reviewed before release,Moderate,Accept,Procurement,2026-10-04
+R-009,Long-lived cloud access keys,Moderate,Mitigate,IAM Eng,2026-09-01
+R-010,Manual offboarding for contractors,Low,Accept,AI Governance,2026-09-17

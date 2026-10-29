@@ -1,0 +1,17 @@
+policy,last_review,age_days,status,owner_team,link
+Information Security Policy,2025-12-13,317,Due < 60 days,Legal,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Access Control Standard,2026-04-21,188,Current,GRC,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Acceptable Use Policy,2026-07-22,96,Current,GRC,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Cryptography Standard,2026-03-26,214,Current,GRC,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Secure Development Standard,2025-08-13,439,Overdue,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Vulnerability Management Standard,2025-09-21,400,Overdue,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Incident Response Plan,2026-07-25,93,Current,IAM Eng,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Business Continuity Policy,2026-08-09,78,Current,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Supplier Security Standard,2025-09-03,418,Overdue,GRC,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Data Classification Standard,2026-10-01,25,Current,Legal,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Logging & Monitoring Standard,2026-09-13,43,Current,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Physical Security Policy,2025-07-15,468,Overdue,SRE,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Security Awareness Policy,2026-08-07,80,Current,SRE,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Change Management Standard,2026-08-22,65,Current,Legal,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+AI Use Policy,2026-07-28,90,Current,IAM Eng,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md
+Data Retention Standard,2026-08-28,59,Current,Legal,https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md

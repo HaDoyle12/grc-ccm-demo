@@ -1,0 +1,15 @@
+id,title,control_id,classification,source,opened,due,overdue,status,owner_team,link
+NC-101,Quarterly access review missed for finance app,A.5.18,OFI,Self-identified,2026-10-07,2027-04-05,False,Open,Product Security,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-101
+NC-102,Two production repos without required reviews,A.8.32,Minor NC,Self-identified,2026-06-15,2026-09-13,True,Open,SRE,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-102
+NC-103,Backup restore test older than 12 months,A.8.13,Minor NC,Continuous monitoring,2026-08-06,2026-11-04,False,Closed,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-103
+NC-104,Supplier SOC report not collected for log vendor,A.5.22,OFI,Continuous monitoring,2026-07-13,2027-01-09,False,In remediation,Product Security,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-104
+NC-105,Contractor training overdue past 30-day window,A.6.3,OFI,External audit,2026-06-16,2026-12-13,False,Open,SRE,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-105
+NC-106,Critical vulnerability open beyond 30-day SLA,A.8.8,OFI,External audit,2026-07-24,2027-01-20,False,Open,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-106
+NC-107,Incident post-mortems missing lessons-learned owner,A.5.27,OFI,Self-identified,2026-04-09,2026-10-06,True,In remediation,SRE,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-107
+NC-108,Encryption standard references retired cipher,A.8.24,OFI,Continuous monitoring,2026-04-23,2026-10-20,True,Open,Product Security,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-108
+NC-109,Visitor log retention shorter than policy,A.7.2,Minor NC,Internal audit,2026-09-29,2026-12-28,False,Closed,People Ops,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-109
+NC-110,Firewall rule review not evidenced for Q3,A.8.20,OFI,Continuous monitoring,2026-09-02,2027-03-01,False,Open,SRE,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-110
+NC-111,Data classification labels missing on shared drive,A.5.13,Minor NC,Self-identified,2026-05-14,2026-08-12,False,Closed,Platform Eng,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-111
+NC-112,Change approvals bypassed for emergency deploys,A.8.32,OFI,Internal audit,2026-06-17,2026-12-14,False,Closed,GRC,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-112
+NC-113,Policy owner departed; review not reassigned,A.5.1,OFI,Internal audit,2026-08-16,2027-02-12,False,Open,SRE,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-113
+NC-114,Logging gap on admin portal authentication,A.8.15,OFI,Self-identified,2026-07-19,2027-01-15,False,In remediation,Product Security,https://github.com/HaDoyle12/grc-ccm-demo/issues?q=NC-114

@@ -1,0 +1,72 @@
+{
+  "dataset": "access_reviews",
+  "source": "Identity provider + review campaigns",
+  "mode": "sample",
+  "as_of": "2026-10-26",
+  "rows": [
+    {
+      "application": "GitHub org",
+      "users_in_scope": 54,
+      "reviewed": 54,
+      "revoked": 3,
+      "last_campaign": "2026-09-03",
+      "complete": true
+    },
+    {
+      "application": "Cloud console (prod)",
+      "users_in_scope": 380,
+      "reviewed": 380,
+      "revoked": 13,
+      "last_campaign": "2026-07-13",
+      "complete": true
+    },
+    {
+      "application": "Customer database",
+      "users_in_scope": 205,
+      "reviewed": 188,
+      "revoked": 3,
+      "last_campaign": "2026-09-15",
+      "complete": false
+    },
+    {
+      "application": "Finance ERP",
+      "users_in_scope": 325,
+      "reviewed": 290,
+      "revoked": 18,
+      "last_campaign": "2026-06-12",
+      "complete": false
+    },
+    {
+      "application": "HR system",
+      "users_in_scope": 41,
+      "reviewed": 41,
+      "revoked": 1,
+      "last_campaign": "2026-07-10",
+      "complete": true
+    },
+    {
+      "application": "Admin portal",
+      "users_in_scope": 119,
+      "reviewed": 119,
+      "revoked": 1,
+      "last_campaign": "2026-06-26",
+      "complete": true
+    },
+    {
+      "application": "SIEM",
+      "users_in_scope": 154,
+      "reviewed": 154,
+      "revoked": 7,
+      "last_campaign": "2026-07-03",
+      "complete": true
+    },
+    {
+      "application": "Payment processor dashboard",
+      "users_in_scope": 266,
+      "reviewed": 266,
+      "revoked": 13,
+      "last_campaign": "2026-09-29",
+      "complete": true
+    }
+  ]
+}

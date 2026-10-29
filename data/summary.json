@@ -1,0 +1,10 @@
+{
+  "controls": 93,
+  "strict_effective": 42,
+  "audit_effective": 81,
+  "automated": 22,
+  "open_findings": 10,
+  "overdue_findings": 3,
+  "stale_evidence": 24,
+  "change_sla_pct": 82.5
+}

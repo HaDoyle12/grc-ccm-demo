@@ -1,0 +1,328 @@
+{
+  "dataset": "changes",
+  "source": "GitHub issue timelines (gh api)",
+  "mode": "sample",
+  "as_of": "2026-10-26",
+  "rows": [
+    {
+      "id": "CHG-2401",
+      "opened": "2026-09-11",
+      "service": "edge-proxy",
+      "review_hours": 20.8,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2402",
+      "opened": "2026-08-13",
+      "service": "web-frontend",
+      "review_hours": 25.5,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2403",
+      "opened": "2026-09-10",
+      "service": "edge-proxy",
+      "review_hours": 15.5,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2404",
+      "opened": "2026-08-03",
+      "service": "edge-proxy",
+      "review_hours": 156.5,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2405",
+      "opened": "2026-09-12",
+      "service": "web-frontend",
+      "review_hours": 67.8,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2406",
+      "opened": "2026-09-14",
+      "service": "payments-api",
+      "review_hours": 23.6,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2407",
+      "opened": "2026-08-10",
+      "service": "web-frontend",
+      "review_hours": 52.6,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2408",
+      "opened": "2026-10-02",
+      "service": "edge-proxy",
+      "review_hours": 150.3,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2409",
+      "opened": "2026-10-18",
+      "service": "edge-proxy",
+      "review_hours": 26.2,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2410",
+      "opened": "2026-09-01",
+      "service": "web-frontend",
+      "review_hours": 20.4,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2411",
+      "opened": "2026-10-18",
+      "service": "data-pipeline",
+      "review_hours": 20.7,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2412",
+      "opened": "2026-09-02",
+      "service": "edge-proxy",
+      "review_hours": 11.0,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2413",
+      "opened": "2026-08-29",
+      "service": "auth-service",
+      "review_hours": 12.1,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2414",
+      "opened": "2026-08-11",
+      "service": "web-frontend",
+      "review_hours": 14.3,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2415",
+      "opened": "2026-08-13",
+      "service": "data-pipeline",
+      "review_hours": 13.5,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2416",
+      "opened": "2026-10-25",
+      "service": "edge-proxy",
+      "review_hours": 32.6,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2417",
+      "opened": "2026-10-03",
+      "service": "auth-service",
+      "review_hours": 12.0,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2418",
+      "opened": "2026-10-13",
+      "service": "edge-proxy",
+      "review_hours": 17.5,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2419",
+      "opened": "2026-10-10",
+      "service": "web-frontend",
+      "review_hours": 6.4,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2420",
+      "opened": "2026-10-03",
+      "service": "auth-service",
+      "review_hours": 25.2,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2421",
+      "opened": "2026-08-07",
+      "service": "auth-service",
+      "review_hours": 8.0,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2422",
+      "opened": "2026-09-10",
+      "service": "auth-service",
+      "review_hours": 26.9,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2423",
+      "opened": "2026-10-24",
+      "service": "data-pipeline",
+      "review_hours": 8.8,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2424",
+      "opened": "2026-09-22",
+      "service": "auth-service",
+      "review_hours": 5.8,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2425",
+      "opened": "2026-08-23",
+      "service": "data-pipeline",
+      "review_hours": 25.0,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2426",
+      "opened": "2026-09-11",
+      "service": "data-pipeline",
+      "review_hours": 12.3,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2427",
+      "opened": "2026-08-26",
+      "service": "edge-proxy",
+      "review_hours": 12.7,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2428",
+      "opened": "2026-10-24",
+      "service": "payments-api",
+      "review_hours": 21.4,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2429",
+      "opened": "2026-08-21",
+      "service": "edge-proxy",
+      "review_hours": 11.9,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2430",
+      "opened": "2026-08-02",
+      "service": "data-pipeline",
+      "review_hours": 50.1,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2431",
+      "opened": "2026-10-26",
+      "service": "web-frontend",
+      "review_hours": 46.9,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2432",
+      "opened": "2026-08-25",
+      "service": "auth-service",
+      "review_hours": 96.3,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2433",
+      "opened": "2026-10-25",
+      "service": "web-frontend",
+      "review_hours": 4.8,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2434",
+      "opened": "2026-10-05",
+      "service": "web-frontend",
+      "review_hours": 20.8,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2435",
+      "opened": "2026-09-03",
+      "service": "web-frontend",
+      "review_hours": 26.2,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2436",
+      "opened": "2026-07-31",
+      "service": "auth-service",
+      "review_hours": 3.4,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2437",
+      "opened": "2026-08-03",
+      "service": "auth-service",
+      "review_hours": 12.1,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2438",
+      "opened": "2026-08-01",
+      "service": "payments-api",
+      "review_hours": 89.7,
+      "within_sla": false,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2439",
+      "opened": "2026-10-22",
+      "service": "auth-service",
+      "review_hours": 14.2,
+      "within_sla": true,
+      "approved_by_second_person": true
+    },
+    {
+      "id": "CHG-2440",
+      "opened": "2026-09-10",
+      "service": "payments-api",
+      "review_hours": 27.4,
+      "within_sla": true,
+      "approved_by_second_person": true
+    }
+  ]
+}

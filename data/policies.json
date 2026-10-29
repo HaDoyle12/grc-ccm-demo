@@ -1,0 +1,136 @@
+{
+  "dataset": "policies",
+  "source": "Policy repo (git history via gh)",
+  "mode": "sample",
+  "as_of": "2026-10-26",
+  "rows": [
+    {
+      "policy": "Information Security Policy",
+      "last_review": "2025-12-13",
+      "age_days": 317,
+      "status": "Due < 60 days",
+      "owner_team": "Legal",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Access Control Standard",
+      "last_review": "2026-04-21",
+      "age_days": 188,
+      "status": "Current",
+      "owner_team": "GRC",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Acceptable Use Policy",
+      "last_review": "2026-07-22",
+      "age_days": 96,
+      "status": "Current",
+      "owner_team": "GRC",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Cryptography Standard",
+      "last_review": "2026-03-26",
+      "age_days": 214,
+      "status": "Current",
+      "owner_team": "GRC",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Secure Development Standard",
+      "last_review": "2025-08-13",
+      "age_days": 439,
+      "status": "Overdue",
+      "owner_team": "People Ops",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Vulnerability Management Standard",
+      "last_review": "2025-09-21",
+      "age_days": 400,
+      "status": "Overdue",
+      "owner_team": "People Ops",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Incident Response Plan",
+      "last_review": "2026-07-25",
+      "age_days": 93,
+      "status": "Current",
+      "owner_team": "IAM Eng",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Business Continuity Policy",
+      "last_review": "2026-08-09",
+      "age_days": 78,
+      "status": "Current",
+      "owner_team": "People Ops",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Supplier Security Standard",
+      "last_review": "2025-09-03",
+      "age_days": 418,
+      "status": "Overdue",
+      "owner_team": "GRC",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Data Classification Standard",
+      "last_review": "2026-10-01",
+      "age_days": 25,
+      "status": "Current",
+      "owner_team": "Legal",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Logging & Monitoring Standard",
+      "last_review": "2026-09-13",
+      "age_days": 43,
+      "status": "Current",
+      "owner_team": "People Ops",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Physical Security Policy",
+      "last_review": "2025-07-15",
+      "age_days": 468,
+      "status": "Overdue",
+      "owner_team": "SRE",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Security Awareness Policy",
+      "last_review": "2026-08-07",
+      "age_days": 80,
+      "status": "Current",
+      "owner_team": "SRE",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Change Management Standard",
+      "last_review": "2026-08-22",
+      "age_days": 65,
+      "status": "Current",
+      "owner_team": "Legal",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "AI Use Policy",
+      "last_review": "2026-07-28",
+      "age_days": 90,
+      "status": "Current",
+      "owner_team": "IAM Eng",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    },
+    {
+      "policy": "Data Retention Standard",
+      "last_review": "2026-08-28",
+      "age_days": 59,
+      "status": "Current",
+      "owner_team": "Legal",
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "week": "2026-08-10",
+    "strict_effective": 24,
+    "audit_effective": 74,
+    "open_findings": 15,
+    "controls": 93
+  },
+  {
+    "week": "2026-08-17",
+    "strict_effective": 26,
+    "audit_effective": 75,
+    "open_findings": 10,
+    "controls": 93
+  },
+  {
+    "week": "2026-08-24",
+    "strict_effective": 30,
+    "audit_effective": 75,
+    "open_findings": 14,
+    "controls": 93
+  },
+  {
+    "week": "2026-08-31",
+    "strict_effective": 32,
+    "audit_effective": 75,
+    "open_findings": 10,
+    "controls": 93
+  },
+  {
+    "week": "2026-09-07",
+    "strict_effective": 32,
+    "audit_effective": 76,
+    "open_findings": 14,
+    "controls": 93
+  },
+  {
+    "week": "2026-09-14",
+    "strict_effective": 34,
+    "audit_effective": 76,
+    "open_findings": 13,
+    "controls": 93
+  },
+  {
+    "week": "2026-09-21",
+    "strict_effective": 34,
+    "audit_effective": 76,
+    "open_findings": 15,
+    "controls": 93
+  },
+  {
+    "week": "2026-09-28",
+    "strict_effective": 34,
+    "audit_effective": 77,
+    "open_findings": 11,
+    "controls": 93
+  },
+  {
+    "week": "2026-10-05",
+    "strict_effective": 38,
+    "audit_effective": 79,
+    "open_findings": 13,
+    "controls": 93
+  },
+  {
+    "week": "2026-10-12",
+    "strict_effective": 39,
+    "audit_effective": 79,
+    "open_findings": 11,
+    "controls": 93
+  },
+  {
+    "week": "2026-10-19",
+    "strict_effective": 42,
+    "audit_effective": 81,
+    "open_findings": 13,
+    "controls": 93
+  },
+  {
+    "week": "2026-10-26",
+    "strict_effective": 42,
+    "audit_effective": 81,
+    "open_findings": 10,
+    "controls": 93
+  }
+]

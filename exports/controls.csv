@@ -1,0 +1,94 @@
+control_id,clause,theme,title,domain,owner_team,evidence_system,automation,last_tested,open_findings,evidence_count,strict_status,audit_status,grc_link
+A.5.1,5.1,Organizational,Security policy set,Governance,GRC,Policy repo,Manual,2026-05-11,0,2,Needs attention,Effective,https://grc.example.com/controls/A.5.1
+A.5.2,5.2,Organizational,Security roles defined,Governance,GRC,Policy repo,Manual,2025-10-12,1,1,Not effective,Exception,https://grc.example.com/controls/A.5.2
+A.5.3,5.3,Organizational,Duties kept separate,Governance,GRC,Policy repo,Semi-automated,2025-11-20,0,3,Needs attention,Effective,https://grc.example.com/controls/A.5.3
+A.5.4,5.4,Organizational,Leadership accountability,Governance,GRC,Policy repo,Semi-automated,2025-10-30,2,13,Needs attention,Effective,https://grc.example.com/controls/A.5.4
+A.5.5,5.5,Organizational,Authority contacts,Data Protection,Privacy Eng,Data catalog,Manual,2026-08-18,0,4,Effective,Effective,https://grc.example.com/controls/A.5.5
+A.5.6,5.6,Organizational,Special-interest group contacts,Data Protection,Privacy Eng,Data catalog,Manual,2026-05-02,0,4,Needs attention,Effective,https://grc.example.com/controls/A.5.6
+A.5.7,5.7,Organizational,Threat intelligence,Vulnerability Mgmt,Product Security,GitHub + EDR,Automated,2026-10-09,1,10,Needs attention,Effective,https://grc.example.com/controls/A.5.7
+A.5.8,5.8,Organizational,Security in project work,Data Protection,Privacy Eng,Data catalog,Semi-automated,2025-10-22,0,4,Not effective,Exception,https://grc.example.com/controls/A.5.8
+A.5.9,5.9,Organizational,Asset inventory,Data Protection,Privacy Eng,Data catalog,Semi-automated,2026-06-26,1,12,Needs attention,Effective,https://grc.example.com/controls/A.5.9
+A.5.10,5.10,Organizational,Acceptable use of assets,Data Protection,Privacy Eng,Data catalog,Semi-automated,2025-10-22,1,4,Not effective,Exception,https://grc.example.com/controls/A.5.10
+A.5.11,5.11,Organizational,Asset return on exit,People & HR,People Ops,HRIS + LMS,Manual,2026-09-06,0,2,Effective,Effective,https://grc.example.com/controls/A.5.11
+A.5.12,5.12,Organizational,Information classification,Data Protection,Privacy Eng,Data catalog,Semi-automated,2026-09-01,0,3,Effective,Effective,https://grc.example.com/controls/A.5.12
+A.5.13,5.13,Organizational,Information labelling,Data Protection,Privacy Eng,Data catalog,Manual,2026-09-12,0,2,Effective,Effective,https://grc.example.com/controls/A.5.13
+A.5.14,5.14,Organizational,Information transfer rules,Data Protection,Privacy Eng,Data catalog,Manual,2026-08-14,1,0,Not effective,Exception,https://grc.example.com/controls/A.5.14
+A.5.15,5.15,Organizational,Access control rules,Identity & Access,IAM Eng,Identity provider,Automated,2026-10-03,1,12,Needs attention,Effective,https://grc.example.com/controls/A.5.15
+A.5.16,5.16,Organizational,Identity lifecycle,Identity & Access,IAM Eng,Identity provider,Manual,2026-04-25,0,0,Not effective,Exception,https://grc.example.com/controls/A.5.16
+A.5.17,5.17,Organizational,Authentication secrets,Identity & Access,IAM Eng,Identity provider,Manual,2026-08-16,2,1,Needs attention,Effective,https://grc.example.com/controls/A.5.17
+A.5.18,5.18,Organizational,Access rights reviews,Identity & Access,IAM Eng,Identity provider,Automated,2026-10-15,0,9,Effective,Effective,https://grc.example.com/controls/A.5.18
+A.5.19,5.19,Organizational,Supplier security,Vendor Management,Procurement,Vendor tracker,Manual,2025-11-24,1,2,Needs attention,Effective,https://grc.example.com/controls/A.5.19
+A.5.20,5.20,Organizational,Security in supplier contracts,Vendor Management,Procurement,Vendor tracker,Semi-automated,2025-11-10,1,8,Needs attention,Effective,https://grc.example.com/controls/A.5.20
+A.5.21,5.21,Organizational,ICT supply chain,Vendor Management,Procurement,Vendor tracker,Manual,2026-05-06,0,1,Needs attention,Effective,https://grc.example.com/controls/A.5.21
+A.5.22,5.22,Organizational,Supplier monitoring,Vendor Management,Procurement,Vendor tracker,Semi-automated,2026-08-10,1,8,Needs attention,Effective,https://grc.example.com/controls/A.5.22
+A.5.23,5.23,Organizational,Cloud service security,Vendor Management,Procurement,Vendor tracker,Manual,2026-08-07,0,1,Needs attention,Effective,https://grc.example.com/controls/A.5.23
+A.5.24,5.24,Organizational,Incident planning,Incident Response,SIRT,Incident tracker,Manual,2026-08-04,0,3,Effective,Effective,https://grc.example.com/controls/A.5.24
+A.5.25,5.25,Organizational,Event triage,Incident Response,SIRT,Incident tracker,Semi-automated,2026-09-09,0,2,Effective,Effective,https://grc.example.com/controls/A.5.25
+A.5.26,5.26,Organizational,Incident response,Incident Response,SIRT,Incident tracker,Semi-automated,2026-07-09,0,3,Needs attention,Effective,https://grc.example.com/controls/A.5.26
+A.5.27,5.27,Organizational,Learning from incidents,Incident Response,SIRT,Incident tracker,Manual,2026-09-27,0,3,Effective,Effective,https://grc.example.com/controls/A.5.27
+A.5.28,5.28,Organizational,Evidence handling,Incident Response,SIRT,Incident tracker,Semi-automated,2025-09-23,0,14,Not effective,Exception,https://grc.example.com/controls/A.5.28
+A.5.29,5.29,Organizational,Security during disruption,Resilience & Backups,SRE,Cloud monitoring,Automated,2026-09-26,0,5,Effective,Effective,https://grc.example.com/controls/A.5.29
+A.5.30,5.30,Organizational,ICT continuity readiness,Resilience & Backups,SRE,Cloud monitoring,Manual,2025-11-02,0,0,Not effective,Exception,https://grc.example.com/controls/A.5.30
+A.5.31,5.31,Organizational,Legal and contractual requirements,Governance,GRC,Policy repo,Semi-automated,2026-09-01,0,5,Effective,Effective,https://grc.example.com/controls/A.5.31
+A.5.32,5.32,Organizational,Intellectual property,Governance,GRC,Policy repo,Semi-automated,2025-12-14,0,6,Needs attention,Effective,https://grc.example.com/controls/A.5.32
+A.5.33,5.33,Organizational,Records protection,Data Protection,Privacy Eng,Data catalog,Semi-automated,2026-04-22,0,9,Needs attention,Effective,https://grc.example.com/controls/A.5.33
+A.5.34,5.34,Organizational,Privacy of personal data,Data Protection,Privacy Eng,Data catalog,Semi-automated,2026-08-31,0,5,Effective,Effective,https://grc.example.com/controls/A.5.34
+A.5.35,5.35,Organizational,Independent security review,Governance,GRC,Policy repo,Semi-automated,2026-07-14,2,11,Needs attention,Effective,https://grc.example.com/controls/A.5.35
+A.5.36,5.36,Organizational,Policy compliance checks,Governance,GRC,Policy repo,Manual,2025-09-24,0,1,Not effective,Exception,https://grc.example.com/controls/A.5.36
+A.5.37,5.37,Organizational,Documented procedures,Governance,GRC,Policy repo,Manual,2026-08-14,0,0,Not effective,Exception,https://grc.example.com/controls/A.5.37
+A.6.1,6.1,People,Pre-hire screening,People & HR,People Ops,HRIS + LMS,Manual,2026-08-18,2,2,Needs attention,Effective,https://grc.example.com/controls/A.6.1
+A.6.2,6.2,People,Employment terms,People & HR,People Ops,HRIS + LMS,Manual,2025-10-29,0,4,Needs attention,Effective,https://grc.example.com/controls/A.6.2
+A.6.3,6.3,People,Security awareness training,People & HR,People Ops,HRIS + LMS,Manual,2026-05-27,0,2,Needs attention,Effective,https://grc.example.com/controls/A.6.3
+A.6.4,6.4,People,Disciplinary process,People & HR,People Ops,HRIS + LMS,Semi-automated,2026-09-24,0,8,Effective,Effective,https://grc.example.com/controls/A.6.4
+A.6.5,6.5,People,Duties after termination,People & HR,People Ops,HRIS + LMS,Semi-automated,2026-06-18,0,9,Needs attention,Effective,https://grc.example.com/controls/A.6.5
+A.6.6,6.6,People,Confidentiality agreements,People & HR,People Ops,HRIS + LMS,Semi-automated,2025-11-16,0,11,Needs attention,Effective,https://grc.example.com/controls/A.6.6
+A.6.7,6.7,People,Remote working,People & HR,People Ops,HRIS + LMS,Manual,2026-08-22,0,4,Effective,Effective,https://grc.example.com/controls/A.6.7
+A.6.8,6.8,People,Event reporting,Incident Response,SIRT,Incident tracker,Semi-automated,2026-08-03,0,14,Effective,Effective,https://grc.example.com/controls/A.6.8
+A.7.1,7.1,Physical,Physical perimeters,Physical Security,Workplace,Badge system,Manual,2026-09-16,0,2,Effective,Effective,https://grc.example.com/controls/A.7.1
+A.7.2,7.2,Physical,Physical entry,Physical Security,Workplace,Badge system,Semi-automated,2026-08-27,2,4,Needs attention,Effective,https://grc.example.com/controls/A.7.2
+A.7.3,7.3,Physical,Securing offices,Physical Security,Workplace,Badge system,Semi-automated,2026-09-10,0,13,Effective,Effective,https://grc.example.com/controls/A.7.3
+A.7.4,7.4,Physical,Physical monitoring,Physical Security,Workplace,Badge system,Semi-automated,2026-08-12,1,10,Needs attention,Effective,https://grc.example.com/controls/A.7.4
+A.7.5,7.5,Physical,Environmental threats,Physical Security,Workplace,Badge system,Manual,2026-08-28,0,5,Effective,Effective,https://grc.example.com/controls/A.7.5
+A.7.6,7.6,Physical,Secure areas,Physical Security,Workplace,Badge system,Semi-automated,2025-11-23,0,4,Needs attention,Effective,https://grc.example.com/controls/A.7.6
+A.7.7,7.7,Physical,Clear desk and screen,Physical Security,Workplace,Badge system,Manual,2026-09-19,0,2,Effective,Effective,https://grc.example.com/controls/A.7.7
+A.7.8,7.8,Physical,Equipment siting,Physical Security,Workplace,Badge system,Manual,2025-10-17,0,0,Not effective,Exception,https://grc.example.com/controls/A.7.8
+A.7.9,7.9,Physical,Off-site assets,Physical Security,Workplace,Badge system,Semi-automated,2025-12-11,0,13,Needs attention,Effective,https://grc.example.com/controls/A.7.9
+A.7.10,7.10,Physical,Storage media,Physical Security,Workplace,Badge system,Semi-automated,2025-12-15,1,12,Needs attention,Effective,https://grc.example.com/controls/A.7.10
+A.7.11,7.11,Physical,Supporting utilities,Physical Security,Workplace,Badge system,Manual,2026-09-16,0,2,Effective,Effective,https://grc.example.com/controls/A.7.11
+A.7.12,7.12,Physical,Cabling security,Physical Security,Workplace,Badge system,Manual,2025-10-11,0,6,Not effective,Exception,https://grc.example.com/controls/A.7.12
+A.7.13,7.13,Physical,Equipment maintenance,Physical Security,Workplace,Badge system,Manual,2026-09-19,0,5,Effective,Effective,https://grc.example.com/controls/A.7.13
+A.7.14,7.14,Physical,Secure disposal,Physical Security,Workplace,Badge system,Manual,2026-10-13,0,3,Effective,Effective,https://grc.example.com/controls/A.7.14
+A.8.1,8.1,Technological,Endpoint devices,Vulnerability Mgmt,Product Security,GitHub + EDR,Automated,2026-10-22,0,11,Effective,Effective,https://grc.example.com/controls/A.8.1
+A.8.2,8.2,Technological,Privileged access,Identity & Access,IAM Eng,Identity provider,Automated,2026-10-15,0,9,Effective,Effective,https://grc.example.com/controls/A.8.2
+A.8.3,8.3,Technological,Information access restriction,Identity & Access,IAM Eng,Identity provider,Semi-automated,2026-09-25,0,14,Effective,Effective,https://grc.example.com/controls/A.8.3
+A.8.4,8.4,Technological,Source code access,Secure SDLC,Platform Eng,GitHub,Automated,2026-10-02,0,12,Effective,Effective,https://grc.example.com/controls/A.8.4
+A.8.5,8.5,Technological,Secure authentication,Identity & Access,IAM Eng,Identity provider,Automated,2026-10-10,2,2,Needs attention,Effective,https://grc.example.com/controls/A.8.5
+A.8.6,8.6,Technological,Capacity management,Resilience & Backups,SRE,Cloud monitoring,Semi-automated,2026-08-07,2,8,Needs attention,Effective,https://grc.example.com/controls/A.8.6
+A.8.7,8.7,Technological,Malware protection,Vulnerability Mgmt,Product Security,GitHub + EDR,Semi-automated,2026-09-15,1,6,Needs attention,Effective,https://grc.example.com/controls/A.8.7
+A.8.8,8.8,Technological,Technical vulnerabilities,Vulnerability Mgmt,Product Security,GitHub + EDR,Automated,2026-10-10,0,14,Effective,Effective,https://grc.example.com/controls/A.8.8
+A.8.9,8.9,Technological,Configuration management,Secure SDLC,Platform Eng,GitHub,Automated,2026-10-21,1,4,Needs attention,Effective,https://grc.example.com/controls/A.8.9
+A.8.10,8.10,Technological,Information deletion,Data Protection,Privacy Eng,Data catalog,Manual,2026-10-05,0,2,Effective,Effective,https://grc.example.com/controls/A.8.10
+A.8.11,8.11,Technological,Data masking,Data Protection,Privacy Eng,Data catalog,Manual,2026-09-11,0,6,Effective,Effective,https://grc.example.com/controls/A.8.11
+A.8.12,8.12,Technological,Data leakage prevention,Data Protection,Privacy Eng,Data catalog,Semi-automated,2025-10-22,0,5,Not effective,Exception,https://grc.example.com/controls/A.8.12
+A.8.13,8.13,Technological,Backups,Resilience & Backups,SRE,Cloud monitoring,Semi-automated,2026-06-29,0,14,Needs attention,Effective,https://grc.example.com/controls/A.8.13
+A.8.14,8.14,Technological,Redundancy,Resilience & Backups,SRE,Cloud monitoring,Automated,2026-10-06,0,13,Effective,Effective,https://grc.example.com/controls/A.8.14
+A.8.15,8.15,Technological,Logging,Logging & Monitoring,Detection Eng,SIEM,Manual,2025-12-21,0,4,Needs attention,Effective,https://grc.example.com/controls/A.8.15
+A.8.16,8.16,Technological,Monitoring,Logging & Monitoring,Detection Eng,SIEM,Semi-automated,2026-08-24,0,9,Effective,Effective,https://grc.example.com/controls/A.8.16
+A.8.17,8.17,Technological,Clock synchronisation,Logging & Monitoring,Detection Eng,SIEM,Automated,2026-09-26,0,3,Effective,Effective,https://grc.example.com/controls/A.8.17
+A.8.18,8.18,Technological,Privileged utilities,Identity & Access,IAM Eng,Identity provider,Automated,2026-10-11,1,10,Needs attention,Effective,https://grc.example.com/controls/A.8.18
+A.8.19,8.19,Technological,Software installation,Vulnerability Mgmt,Product Security,GitHub + EDR,Automated,2026-10-12,0,10,Effective,Effective,https://grc.example.com/controls/A.8.19
+A.8.20,8.20,Technological,Network security,Network,NetOps,Cloud config,Semi-automated,2026-08-14,2,3,Needs attention,Effective,https://grc.example.com/controls/A.8.20
+A.8.21,8.21,Technological,Network services,Network,NetOps,Cloud config,Automated,2026-10-01,0,8,Effective,Effective,https://grc.example.com/controls/A.8.21
+A.8.22,8.22,Technological,Network segregation,Network,NetOps,Cloud config,Automated,2026-10-24,2,9,Needs attention,Effective,https://grc.example.com/controls/A.8.22
+A.8.23,8.23,Technological,Web filtering,Network,NetOps,Cloud config,Semi-automated,2026-09-24,0,10,Effective,Effective,https://grc.example.com/controls/A.8.23
+A.8.24,8.24,Technological,Cryptography,Data Protection,Privacy Eng,Data catalog,Semi-automated,2025-11-27,0,5,Needs attention,Effective,https://grc.example.com/controls/A.8.24
+A.8.25,8.25,Technological,Secure development lifecycle,Secure SDLC,Platform Eng,GitHub,Automated,2026-09-27,2,9,Needs attention,Effective,https://grc.example.com/controls/A.8.25
+A.8.26,8.26,Technological,Application security requirements,Secure SDLC,Platform Eng,GitHub,Automated,2026-09-29,0,11,Effective,Effective,https://grc.example.com/controls/A.8.26
+A.8.27,8.27,Technological,Secure architecture,Secure SDLC,Platform Eng,GitHub,Automated,2026-09-29,0,6,Effective,Effective,https://grc.example.com/controls/A.8.27
+A.8.28,8.28,Technological,Secure coding,Secure SDLC,Platform Eng,GitHub,Manual,2026-09-25,0,3,Effective,Effective,https://grc.example.com/controls/A.8.28
+A.8.29,8.29,Technological,Security testing,Secure SDLC,Platform Eng,GitHub,Manual,2026-08-24,0,4,Effective,Effective,https://grc.example.com/controls/A.8.29
+A.8.30,8.30,Technological,Outsourced development,Vendor Management,Procurement,Vendor tracker,Semi-automated,2026-09-26,0,12,Effective,Effective,https://grc.example.com/controls/A.8.30
+A.8.31,8.31,Technological,Environment separation,Secure SDLC,Platform Eng,GitHub,Semi-automated,2026-08-02,0,2,Effective,Effective,https://grc.example.com/controls/A.8.31
+A.8.32,8.32,Technological,Change management,Secure SDLC,Platform Eng,GitHub,Automated,2026-10-03,0,3,Effective,Effective,https://grc.example.com/controls/A.8.32
+A.8.33,8.33,Technological,Test information,Secure SDLC,Platform Eng,GitHub,Automated,2026-10-03,2,10,Needs attention,Effective,https://grc.example.com/controls/A.8.33
+A.8.34,8.34,Technological,Audit testing protection,Logging & Monitoring,Detection Eng,SIEM,Automated,2026-10-22,0,13,Effective,Effective,https://grc.example.com/controls/A.8.34
