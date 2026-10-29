@@ -10,6 +10,9 @@ demo repo) and reads the same settings an auditor would screenshot:
     gh api repos/OWNER/REPO/code-scanning/alerts  -> open code-scanning alerts
 
 Settings the token cannot see are recorded as "unknown" -- never as "pass".
+What you can attest to is bounded by the token: in Actions, GITHUB_TOKEN with
+`security-events: read` can see code scanning but not secret scanning or
+Dependabot settings; a repo admin (or a GitHub App with those permissions) sees all.
 """
 from __future__ import annotations
 
@@ -31,7 +34,7 @@ def sample():
     for name in TEAMS:
         crit = r.random() < 0.3
         rows.append({
-            "repo": f"northwind/{name}", "tier": "Critical" if crit else r.choice(["High", "Standard"]),
+            "source": "Sample", "repo": f"northwind/{name}", "tier": "Critical" if crit else r.choice(["High", "Standard"]),
             "branch_protection": r.random() < 0.85, "required_reviews": r.choice([0, 1, 1, 2]),
             "secret_scanning": r.random() < 0.92, "push_protection": r.random() < 0.8,
             "dependabot_alerts": r.random() < 0.9, "code_scanning": r.random() < 0.7,
@@ -82,7 +85,7 @@ def live():
         dep = gh(f"repos/{full}/dependabot/alerts?state=open&severity=critical&per_page=100")
         cs = gh(f"repos/{full}/code-scanning/alerts?state=open&per_page=100")
         rows.append({
-            "repo": full, "tier": "Critical",
+            "source": "Live", "repo": full, "tier": "Critical",
             "branch_protection": bool(rules),
             "required_reviews": (pr_rule or {}).get("parameters", {}).get("required_approving_review_count", 0),
             "secret_scanning": flag("secret_scanning"), "push_protection": flag("secret_scanning_push_protection"),
@@ -90,7 +93,8 @@ def live():
             "open_critical_vulns": len(dep) if isinstance(dep, list) else 0, "oldest_critical_days": 0,
             "signed_releases": UNKNOWN, "last_push": (meta.get("pushed_at") or "")[:10],
         })
-    return rows
+    # Live rows first, then the fictional Northwind repos so the tab still tells a story.
+    return rows + sample()
 
 
 def main(live_mode: bool = False) -> int:

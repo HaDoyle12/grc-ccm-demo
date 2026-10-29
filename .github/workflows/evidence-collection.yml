@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  security-events: read   # lets the live collector read code-scanning alerts
   attestations: write
 
 jobs:
