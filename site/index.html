@@ -118,6 +118,37 @@ function simple(id, title, sub, how, cards, cols, rows) {
   $(id).innerHTML = `<h2>${esc(title)}</h2><div class="lastupd">${esc(sub)}</div><div class="cards">${cards}</div>${how ? `<div class="how">${how}</div>` : ''}` + table(id + 't', cols, rows);
 }
 
+const TRACK = 'https://github.com/HaDoyle12/grc-ccm-demo/issues/2';
+const IAM_STEPS = [
+  ['Provision', 'An HRIS hire event creates the IdP account with a birthright role only.', ['A.5.16'], 'IdP provisioning log ↔ HRIS roster'],
+  ['Request & approve', 'Extra access is requested by role; the manager and the app owner both approve.', ['A.5.15', 'A.8.3'], 'Request ticket with two approvals'],
+  ['Authenticate', 'SSO everywhere, phishing-resistant MFA, passwords ≥ 14 characters.', ['A.5.17', 'A.8.5'], 'IdP policy export'],
+  ['Privileged access', 'Just-in-time elevation, time-boxed to 8h, every session logged.', ['A.8.2', 'A.8.18'], 'PAM session log'],
+  ['Access review', 'Quarterly campaign per in-scope app; revocations done within 5 business days.', ['A.5.18'], 'Campaign decisions export'],
+  ['Mover / leaver', 'Role change or termination disables the account and revokes keys within 24h.', ['A.5.16', 'A.5.18'], 'HRIS termination ↔ IdP disable time'],
+  ['Monitor & evidence', 'Collectors run weekly; the freshness gate fails a stale feed; exceptions open a finding.', ['all'], 'gh / Actions run log, signed release']];
+function iamProcess(c) {
+  const byId = Object.fromEntries(c.map(x => [x.control_id, x])), rank = {'Effective': 0, 'Needs attention': 1, 'Exception': 2, 'Not effective': 2};
+  const worst = ids => (ids[0] === 'all' ? c : ids.map(i => byId[i]).filter(Boolean)).map(st).sort((a, b) => rank[b] - rank[a])[0] || 'Effective';
+  const fill = {'Effective': ['#dafbe1', '#1a7f37'], 'Needs attention': ['#fff8c5', '#9a6700'], 'Exception': ['#ffebe9', '#cf222e'], 'Not effective': ['#ffebe9', '#cf222e']};
+  const W = 190, H = 74, G = 36, X0 = 120, pos = [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [2, 1], [1, 1]];
+  const xy = i => [X0 + pos[i][0] * (W + G), 20 + pos[i][1] * (H + 60)];
+  const box = (s, i) => { const [x, y] = xy(i), w = worst(s[2]), [bg, fg] = fill[w];
+    return `<g><rect x="${x}" y="${y}" width="${W}" height="${H}" rx="10" fill="${bg}" stroke="${fg}" stroke-width="2"/><text x="${x + 12}" y="${y + 24}" font-size="14" font-weight="700" fill="#0a2540">${i + 1} · ${esc(s[0])}</text><text x="${x + 12}" y="${y + 44}" font-size="11" fill="#57606a">${esc(s[2][0] === 'all' ? 'all ' + c.length + ' controls' : s[2].join(', '))}</text><text x="${x + 12}" y="${y + 62}" font-size="11" font-weight="600" fill="${fg}">${esc(w)}</text><title>${esc(s[1])}</title></g>`; };
+  const arrow = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#57606a" stroke-width="2" marker-end="url(#ah)"/>`;
+  let arrows = '';
+  for (let i = 0; i < 6; i++) { const [x1, y1] = xy(i), [x2, y2] = xy(i + 1);
+    arrows += y1 === y2 ? (x2 > x1 ? arrow(x1 + W, y1 + H / 2, x2 - 4, y2 + H / 2) : arrow(x1, y1 + H / 2, x2 + W + 4, y2 + H / 2)) : arrow(x1 + W / 2, y1 + H, x2 + W / 2, y2 - 4); }
+  const [lx, ly] = xy(6), [fx, fy] = xy(0);
+  const svg = `<svg viewBox="0 0 1060 250" width="100%" role="img" aria-label="Identity and access process flow"><defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker></defs>
+    <rect x="4" y="${fy + 17}" width="90" height="40" rx="20" fill="#0a2540"/><text x="49" y="${fy + 42}" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">HRIS event</text>${arrow(94, fy + H / 2, fx - 4, fy + H / 2)}
+    ${arrows}${IAM_STEPS.map(box).join('')}
+    ${arrow(lx, ly + H / 2, 100, ly + H / 2)}<rect x="4" y="${ly + 12}" width="96" height="50" rx="8" fill="#ffebe9" stroke="#cf222e"/><text x="52" y="${ly + 33}" font-size="11" font-weight="700" fill="#cf222e" text-anchor="middle">Exception →</text><text x="52" y="${ly + 49}" font-size="11" fill="#cf222e" text-anchor="middle">finding issue</text>
+    <text x="${X0}" y="244" font-size="11" fill="#57606a">Box colour = weakest mapped control (${MODE === 'strict' ? 'strict internal' : 'audit-threshold'} view). Hover a box for the step description.</text></svg>`;
+  return `<div class="dsec"><h3>Process flow — joiner → mover → leaver</h3><div class="note">How access moves through Northwind, and which ISO control each step evidences</div><div class="panelbox">${svg}</div></div>`
+    + `<div class="dsec"><h3>Process description</h3><div class="note">Written process the controls are tested against</div>` + table('dproc', [['#', r => esc(IAM_STEPS.indexOf(r) + 1), 'c'], ['Step', r => `<b>${esc(r[0])}</b>`], ['What happens', r => esc(r[1])], ['Control(s)', r => esc(r[2][0] === 'all' ? 'all ' + c.length + ' controls' : r[2].join(', '))], ['Evidence collected automatically', r => esc(r[3])], ['Status', r => pill(worst(r[2]), statusCls(worst(r[2])))]], IAM_STEPS) + '</div>';
+}
+
 function domain() {
   const DOM = 'Identity & Access', c = D.controls.filter(x => x.domain === DOM), ids = new Set(c.map(x => x.control_id));
   const ev = D.evidence.filter(e => ids.has(e.control_id)), fi = D.findings.filter(f => ids.has(f.control_id));
@@ -128,6 +159,8 @@ function domain() {
   $('p-domain').innerHTML = `<h2>Domain example — ${esc(DOM)}</h2><div class="lastupd">One control domain followed through every data area in the register · demo data as of ${esc(D.as_of)} · ${MODE==='strict'?'Strict internal view':'Audit-threshold view'}</div>
   <div class="how">This is the view a control owner gets: every dataset the live pipeline collects, filtered to one domain (ISO 27001 Annex A: ${[...ids].join(', ')}). Links are by control ID where the system of record carries one, otherwise by application, service or document.</div>
   <div class="cards">${card(pct(eff, c.length) + '%', 'Controls effective', eff + ' of ' + c.length)}${card(ev.length, 'Evidence artefacts', ev.filter(e => e.stale).length + ' stale', '#0969da')}${card(of.length, 'Open findings', of.filter(f => f.overdue).length + ' overdue', '#cf222e')}${card(rk.length, 'Linked risks', '', '#9a6700')}${card(ar.filter(a => a.complete).length + '/' + ar.length, 'Access reviews complete')}${card(ar.reduce((a, r) => a + r.revoked, 0), 'Access revoked', 'this cycle')}${card(po.filter(p => p.alignment === 'Conflict').length, 'Policy conflicts', 'vs parent policy', '#cf222e')}</div>`
+  + iamProcess(c)
+  + `<div class="alert warn"><b class="t">📌 FY27 tracking issue</b> — quarterly plan, open items, KPIs and monthly status updates for this domain live in <a href="${TRACK}" target="_blank" rel="noopener">FY27 Identity &amp; Access Management — program tracking (issue #2)</a>.</div>`
   + sec('1 · Controls', 'GRC platform', table('dc', [['Control', r => link(r.grc_link, r.control_id)], ['Title', r => esc(r.title)], ['Owner', r => esc(r.owner_team)], ['Automation', r => esc(r.automation)], ['Last tested', r => esc(r.last_tested)], ['Evidence', r => esc(r.evidence_count), 'c'], ['Status', r => pill(st(r), statusCls(st(r)))]], c))
   + sec('2 · Evidence', 'Evidence store + GitHub Actions releases', table('de', [['ID', r => link(r.link, r.evidence_id)], ['Artefact', r => esc(r.name)], ['Control', r => esc(r.control_id)], ['Store', r => esc(r.store)], ['Collected', r => esc(r.collected)], ['Age', r => esc(r.age_days) + (r.stale ? ' ' + pill('stale', 'warn') : ''), 'c']], ev.slice().sort((a, b) => b.age_days - a.age_days)))
   + sec('3 · Findings', 'GitHub Project board', fi.length ? table('df', [['ID', r => link(r.link, r.id)], ['Finding', r => esc(r.title)], ['Control', r => esc(r.control_id)], ['Class', r => pill(r.classification, statusCls(r.classification))], ['Due', r => esc(r.due) + (r.overdue ? ' ' + pill('overdue', 'bad') : '')], ['Status', r => pill(r.status, statusCls(r.status))]], fi) : '<div class="note">No findings.</div>')
