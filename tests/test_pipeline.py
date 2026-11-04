@@ -49,6 +49,14 @@ class Collectors(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             _common.publish("empty_probe", [], source="test")
 
+    def test_policy_vs_standard_flags_only_weaker_standards(self):
+        import policies
+        reqs = [("Password length", "chars", "min", 14, "Access Control Standard", 12),
+                ("Password length", "chars", "min", 14, "Cryptography Standard", 16),
+                ("Fix critical vulns", "days", "max", 30, "Vulnerability Management Standard", 45),
+                ("Log retention", "days", "max", 30, "Logging & Monitoring Standard", 30)]
+        self.assertEqual(sorted(policies.conflicts(reqs)), ["Access Control Standard", "Vulnerability Management Standard"])
+
 
 class Dashboard(unittest.TestCase):
     def test_injected_markup_is_not_rendered_raw(self):

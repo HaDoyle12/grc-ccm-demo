@@ -10,7 +10,11 @@
       "age_days": 317,
       "status": "Due < 60 days",
       "owner_team": "Legal",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Access Control Standard",
@@ -18,7 +22,11 @@
       "age_days": 188,
       "status": "Current",
       "owner_team": "GRC",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Conflict",
+      "alignment_detail": "Minimum password length: standard says 12 chars, Information Security Policy requires \u2265 14 chars"
     },
     {
       "policy": "Acceptable Use Policy",
@@ -26,7 +34,11 @@
       "age_days": 96,
       "status": "Current",
       "owner_team": "GRC",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Cryptography Standard",
@@ -34,7 +46,11 @@
       "age_days": 214,
       "status": "Current",
       "owner_team": "GRC",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Aligned",
+      "alignment_detail": ""
     },
     {
       "policy": "Secure Development Standard",
@@ -42,7 +58,11 @@
       "age_days": 439,
       "status": "Overdue",
       "owner_team": "People Ops",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Drift",
+      "alignment_detail": "Last reviewed 2025-08-13, before Information Security Policy was revised on 2025-12-13; re-review against the current policy"
     },
     {
       "policy": "Vulnerability Management Standard",
@@ -50,7 +70,11 @@
       "age_days": 400,
       "status": "Overdue",
       "owner_team": "People Ops",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Conflict",
+      "alignment_detail": "Critical vulnerability remediation: standard says 45 days, Information Security Policy requires \u2264 30 days"
     },
     {
       "policy": "Incident Response Plan",
@@ -58,7 +82,11 @@
       "age_days": 93,
       "status": "Current",
       "owner_team": "IAM Eng",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Business Continuity Policy",
@@ -66,7 +94,11 @@
       "age_days": 78,
       "status": "Current",
       "owner_team": "People Ops",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Supplier Security Standard",
@@ -74,7 +106,11 @@
       "age_days": 418,
       "status": "Overdue",
       "owner_team": "GRC",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Drift",
+      "alignment_detail": "Last reviewed 2025-09-03, before Information Security Policy was revised on 2025-12-13; re-review against the current policy"
     },
     {
       "policy": "Data Classification Standard",
@@ -82,7 +118,11 @@
       "age_days": 25,
       "status": "Current",
       "owner_team": "Legal",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Aligned",
+      "alignment_detail": ""
     },
     {
       "policy": "Logging & Monitoring Standard",
@@ -90,7 +130,11 @@
       "age_days": 43,
       "status": "Current",
       "owner_team": "People Ops",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Aligned",
+      "alignment_detail": ""
     },
     {
       "policy": "Physical Security Policy",
@@ -98,7 +142,11 @@
       "age_days": 468,
       "status": "Overdue",
       "owner_team": "SRE",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Security Awareness Policy",
@@ -106,7 +154,11 @@
       "age_days": 80,
       "status": "Current",
       "owner_team": "SRE",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Change Management Standard",
@@ -114,7 +166,11 @@
       "age_days": 65,
       "status": "Current",
       "owner_team": "Legal",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Aligned",
+      "alignment_detail": ""
     },
     {
       "policy": "AI Use Policy",
@@ -122,7 +178,11 @@
       "age_days": 90,
       "status": "Current",
       "owner_team": "IAM Eng",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Policy",
+      "parent_policy": "",
+      "alignment": "n/a",
+      "alignment_detail": ""
     },
     {
       "policy": "Data Retention Standard",
@@ -130,7 +190,11 @@
       "age_days": 59,
       "status": "Current",
       "owner_team": "Legal",
-      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md"
+      "link": "https://github.com/HaDoyle12/grc-ccm-demo/blob/main/docs/06-pipeline-processes.md",
+      "doc_type": "Standard",
+      "parent_policy": "Information Security Policy",
+      "alignment": "Aligned",
+      "alignment_detail": ""
     }
   ]
 }

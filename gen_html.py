@@ -42,6 +42,8 @@ input,select{padding:6px 10px;margin:8px 8px 8px 0;border:1px solid #d0d7de;bord
 .ok{background:#dafbe1;color:#1a7f37}.warn{background:#fff8c5;color:#9a6700}.bad{background:#ffebe9;color:#cf222e}.muted{background:#eef1f4;color:#57606a}.std{background:#ddf4ff;color:#0550ae}
 a{color:#0969da;text-decoration:none}a:hover{text-decoration:underline}
 .note{font-size:12px;color:#57606a;margin:8px 0}
+.alert{font-size:13px;color:#1b1f23;background:#fff5f5;border:1px solid #ff8182;border-left:4px solid #cf222e;padding:10px 14px;margin:10px 0;border-radius:6px}.alert b.t{color:#cf222e}.alert ul{margin:6px 0 0 18px;padding:0}.alert.warn{background:#fff8c5;border-color:#d4a72c;border-left-color:#9a6700}.alert.warn b.t{color:#9a6700}
+.dsec{margin:18px 0 6px;padding-top:10px;border-top:1px solid #d0d7de}.dsec h3{margin:0 0 2px}
 .how{font-size:12px;color:#1b1f23;background:#fff;border-left:3px solid #0969da;padding:8px 12px;margin:8px 0;border-radius:0 6px 6px 0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
 .panelbox{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:14px;margin:8px 0}
@@ -59,7 +61,7 @@ let MODE = 'strict';
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $ = id => document.getElementById(id);
 const pill = (t, cls) => `<span class="pill ${cls}">${esc(t)}</span>`;
-const statusCls = s => ({'Effective':'ok','Needs attention':'warn','Not effective':'bad','Exception':'bad','Open':'warn','In remediation':'std','Closed':'muted','Current':'ok','Overdue':'bad','Due < 60 days':'warn','Critical':'bad','High':'warn','Moderate':'std','Low':'muted','Major NC':'bad','Minor NC':'warn','OFI':'std'}[s] || 'muted');
+const statusCls = s => ({'Effective':'ok','Needs attention':'warn','Not effective':'bad','Exception':'bad','Open':'warn','In remediation':'std','Closed':'muted','Current':'ok','Overdue':'bad','Due < 60 days':'warn','Critical':'bad','High':'warn','Moderate':'std','Low':'muted','Conflict':'bad','Drift':'warn','Aligned':'ok','Major NC':'bad','Minor NC':'warn','OFI':'std'}[s] || 'muted');
 const st = c => MODE === 'strict' ? c.strict_status : c.audit_status;
 const yes = v => v === true ? pill('✓','ok') : v === false ? pill('✗','bad') : pill('?','muted');
 const link = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
@@ -130,8 +132,29 @@ function simple(id, title, sub, how, cards, cols, rows) {
   $(id).innerHTML = `<h2>${esc(title)}</h2><div class="lastupd">${esc(sub)}</div><div class="cards">${cards}</div>${how ? `<div class="how">${how}</div>` : ''}` + table(id + 't', cols, rows);
 }
 
+function domain() {
+  const DOM = 'Identity & Access', c = D.controls.filter(x => x.domain === DOM), ids = new Set(c.map(x => x.control_id));
+  const ev = D.evidence.filter(e => ids.has(e.control_id)), fi = D.findings.filter(f => ids.has(f.control_id));
+  const rk = D.risks.filter(r => /admin account|access key|offboarding/i.test(r.title)), po = D.policies.filter(p => /Access Control|Information Security/.test(p.policy));
+  const ch = D.changes.filter(x => x.service === 'auth-service'), ar = D.access_reviews, rs = D.repo_security, tr = D.training;
+  const eff = c.filter(x => st(x) === 'Effective').length, of = fi.filter(f => f.status !== 'Closed');
+  const sec = (t, src, body) => `<div class="dsec"><h3>${esc(t)}</h3><div class="note">${esc(src)}</div>${body}</div>`;
+  $('p-domain').innerHTML = `<h2>Domain example — ${esc(DOM)}</h2><div class="lastupd">One control domain followed through every data area in the register · demo data as of ${esc(D.as_of)} · ${MODE==='strict'?'Strict internal view':'Audit-threshold view'}</div>
+  <div class="how">This is the view a control owner gets: every dataset the live pipeline collects, filtered to one domain (ISO 27001 Annex A: ${[...ids].join(', ')}). Links are by control ID where the system of record carries one, otherwise by application, service or document.</div>
+  <div class="cards">${card(pct(eff, c.length) + '%', 'Controls effective', eff + ' of ' + c.length)}${card(ev.length, 'Evidence artefacts', ev.filter(e => e.stale).length + ' stale', '#0969da')}${card(of.length, 'Open findings', of.filter(f => f.overdue).length + ' overdue', '#cf222e')}${card(rk.length, 'Linked risks', '', '#9a6700')}${card(ar.filter(a => a.complete).length + '/' + ar.length, 'Access reviews complete')}${card(ar.reduce((a, r) => a + r.revoked, 0), 'Access revoked', 'this cycle')}${card(po.filter(p => p.alignment === 'Conflict').length, 'Policy conflicts', 'vs parent policy', '#cf222e')}</div>`
+  + sec('1 · Controls', 'GRC platform', table('dc', [['Control', r => link(r.grc_link, r.control_id)], ['Title', r => esc(r.title)], ['Owner', r => esc(r.owner_team)], ['Automation', r => esc(r.automation)], ['Last tested', r => esc(r.last_tested)], ['Evidence', r => esc(r.evidence_count), 'c'], ['Status', r => pill(st(r), statusCls(st(r)))]], c))
+  + sec('2 · Evidence', 'Evidence store + GitHub Actions releases', table('de', [['ID', r => link(r.link, r.evidence_id)], ['Artefact', r => esc(r.name)], ['Control', r => esc(r.control_id)], ['Store', r => esc(r.store)], ['Collected', r => esc(r.collected)], ['Age', r => esc(r.age_days) + (r.stale ? ' ' + pill('stale', 'warn') : ''), 'c']], ev.slice().sort((a, b) => b.age_days - a.age_days)))
+  + sec('3 · Findings', 'GitHub Project board', fi.length ? table('df', [['ID', r => link(r.link, r.id)], ['Finding', r => esc(r.title)], ['Control', r => esc(r.control_id)], ['Class', r => pill(r.classification, statusCls(r.classification))], ['Due', r => esc(r.due) + (r.overdue ? ' ' + pill('overdue', 'bad') : '')], ['Status', r => pill(r.status, statusCls(r.status))]], fi) : '<div class="note">No findings.</div>')
+  + sec('4 · Risks', 'Risk register issues', table('dr', [['ID', r => esc(r.id)], ['Risk', r => esc(r.title)], ['Severity', r => pill(r.severity, statusCls(r.severity))], ['Treatment', r => esc(r.treatment)], ['Owner', r => esc(r.owner_team)], ['Last worked', r => esc(r.last_worked)]], rk))
+  + sec('5 · Policies & standards', 'Policy repo · policy vs standard check', table('dp', [['Document', r => esc(r.policy)], ['Type', r => esc(r.doc_type)], ['Last review', r => esc(r.last_review)], ['Review status', r => pill(r.status, statusCls(r.status))], ['Policy vs standard', r => r.alignment === 'n/a' ? '' : pill(r.alignment, statusCls(r.alignment)) + (r.alignment_detail ? `<div class="note">${esc(r.alignment_detail)}</div>` : '')]], po))
+  + sec('6 · Access reviews', 'Identity provider + review campaigns', table('da', [['Application', r => esc(r.application)], ['Users', r => esc(r.users_in_scope), 'c'], ['Reviewed', r => esc(r.reviewed), 'c'], ['Revoked', r => esc(r.revoked), 'c'], ['Last campaign', r => esc(r.last_campaign)], ['Complete', r => yes(r.complete), 'c']], ar))
+  + sec('7 · Change management', 'Emergency changes to auth-service', table('dch', [['Change', r => esc(r.id)], ['Opened', r => esc(r.opened)], ['Review hours', r => esc(r.review_hours), 'c'], ['Within SLA', r => yes(r.within_sla), 'c'], ['2nd approver', r => yes(r.approved_by_second_person), 'c']], ch))
+  + sec('8 · Repository access controls', 'GitHub API via gh api — who can change code', table('drs', [['Repo', r => esc(r.repo)], ['Tier', r => pill(r.tier, statusCls(r.tier))], ['Branch protection', r => yes(r.branch_protection), 'c'], ['Req. reviews', r => esc(r.required_reviews), 'c'], ['Push protection', r => yes(r.push_protection), 'c']], rs))
+  + sec('9 · Training', 'HRIS + LMS — credential & phishing awareness', table('dt', [['Cohort', r => esc(r.cohort)], ['Population', r => esc(r.population), 'c'], ['Completed', r => esc(r.completed), 'c'], ['No record', r => esc(r.no_record), 'c'], ['Completion', r => hbars([['', r.pct, 100, r.pct >= 95 ? '#2da44e' : '#d4a72c']])]], tr));
+}
+
 function render() {
-  overview(); controls();
+  overview(); controls(); domain();
   const f = D.findings, open = f.filter(x => x.status !== 'Closed');
   simple('p-findings', 'Findings & Nonconformities', 'source: GitHub Project board (issue per finding)', 'Remediation windows: Major NC 30 days · Minor NC 90 days · OFI 180 days. Overdue is computed from the open date, not a manually set label.',
     card(open.length, 'Open') + card(open.filter(x => x.overdue).length, 'Overdue', '', '#cf222e') + card(open.filter(x => x.classification === 'Major NC').length, 'Major NC', '', '#cf222e') + card(f.filter(x => x.source === 'Continuous monitoring').length, 'Found by monitoring', 'not by an auditor', '#1a7f37'),
@@ -152,10 +175,14 @@ function render() {
   simple('p-changes', 'Change Management', 'source: emergency-change issues · SLA computed from issue timeline events', 'Review SLA is 48 hours from deploy to second-person review. The clock comes from timeline events, so a mis-configured bot label cannot change the number.',
     card(ch.length, 'Emergency changes', 'last 90 days') + card(pct(ch.filter(c => c.within_sla).length, ch.length) + '%', 'Reviewed within SLA') + card(ch.filter(c => !c.approved_by_second_person).length, 'Missing 2nd approver', '', '#cf222e'),
     [['Change', r => esc(r.id)], ['Opened', r => esc(r.opened)], ['Service', r => esc(r.service)], ['Review hours', r => esc(r.review_hours), 'c'], ['Within SLA', r => yes(r.within_sla), 'c'], ['2nd approver', r => yes(r.approved_by_second_person), 'c']], ch.slice().sort((a, b) => b.review_hours - a.review_hours));
-  const po = D.policies;
-  simple('p-policies', 'Policies & Standards', 'source: policy repo — last merged PR labelled annual-review', '',
-    card(po.filter(p => p.status === 'Current').length, 'Current', '', '#1a7f37') + card(po.filter(p => p.status === 'Due < 60 days').length, 'Due < 60 days', '', '#9a6700') + card(po.filter(p => p.status === 'Overdue').length, 'Overdue', '', '#cf222e'),
-    [['Policy', r => esc(r.policy)], ['Last review', r => esc(r.last_review)], ['Age (days)', r => esc(r.age_days), 'c'], ['Owner', r => esc(r.owner_team)], ['Status', r => pill(r.status, statusCls(r.status))]], po.slice().sort((a, b) => b.age_days - a.age_days));
+  const po = D.policies, pc = po.filter(p => p.alignment === 'Conflict'), pd = po.filter(p => p.alignment === 'Drift');
+  simple('p-policies', 'Policies & Standards', 'source: policy repo — last merged PR labelled annual-review · standards compared to their parent policy', '<b>Policy vs standard check.</b> Each standard names its parent policy, and both carry their measurable requirements (password length, remediation days, retention…) as front matter. The collector compares them on every run: <b>Conflict</b> = the standard is weaker than the policy it implements; <b>Drift</b> = the standard has not been reviewed since its parent policy was revised.',
+    card(po.filter(p => p.status === 'Current').length, 'Current', '', '#1a7f37') + card(po.filter(p => p.status === 'Due < 60 days').length, 'Due < 60 days', '', '#9a6700') + card(po.filter(p => p.status === 'Overdue').length, 'Overdue', '', '#cf222e') + card(pc.length, 'Policy vs standard conflicts', 'standard weaker than policy', '#cf222e') + card(pd.length, 'Review drift', 'standard older than policy', '#9a6700'),
+    [['Document', r => esc(r.policy)], ['Type', r => esc(r.doc_type)], ['Parent policy', r => esc(r.parent_policy)], ['Last review', r => esc(r.last_review)], ['Age (days)', r => esc(r.age_days), 'c'], ['Owner', r => esc(r.owner_team)], ['Review status', r => pill(r.status, statusCls(r.status))], ['Policy vs standard', r => r.alignment === 'n/a' ? '' : pill(r.alignment, statusCls(r.alignment)) + (r.alignment_detail ? `<div class="note">${esc(r.alignment_detail)}</div>` : '')]],
+    po.slice().sort((a, b) => ({Conflict: 0, Drift: 1}[a.alignment] ?? 2) - ({Conflict: 0, Drift: 1}[b.alignment] ?? 2) || b.age_days - a.age_days));
+  const alerts = (pc.length ? `<div class="alert" role="alert"><b class="t">🚨 Policy vs standard conflict — ${pc.length} standard${pc.length > 1 ? 's' : ''} weaker than the policy they implement</b><ul>${pc.map(p => `<li><b>${esc(p.policy)}</b> → ${esc(p.alignment_detail)}</li>`).join('')}</ul></div>` : '') +
+    (pd.length ? `<div class="alert warn"><b class="t">⚠️ Review drift — ${pd.length} standard${pd.length > 1 ? 's' : ''} not re-reviewed since the parent policy changed</b><ul>${pd.map(p => `<li><b>${esc(p.policy)}</b> → ${esc(p.alignment_detail)}</li>`).join('')}</ul></div>` : '');
+  $('p-policies').querySelector('.cards').insertAdjacentHTML('afterend', alerts);
   const rk = D.risks, order = {Critical: 0, High: 1, Moderate: 2, Low: 3};
   simple('p-risks', 'Risk Register', 'source: GitHub issues labelled "Risk Register"', '',
     ['Critical', 'High', 'Moderate', 'Low'].map(s => card(rk.filter(r => r.severity === s).length, s)).join(''),
@@ -182,7 +209,7 @@ render();
 const start = document.querySelector(`.tabbtn[data-p="p-${location.hash.slice(1)}"]`); if (start) start.click();
 """
 
-TABS = [("overview", "Overview"), ("controls", "ISO Controls"), ("findings", "Findings"), ("repos", "Repo Security"),
+TABS = [("overview", "Overview"), ("domain", "Domain Demo"), ("controls", "ISO Controls"), ("findings", "Findings"), ("repos", "Repo Security"),
         ("access", "Access Reviews"), ("training", "Training"), ("changes", "Change Mgmt"), ("policies", "Policies"),
         ("risks", "Risk Register"), ("evidence", "Evidence"), ("pipeline", "Data Pipeline")]
 
